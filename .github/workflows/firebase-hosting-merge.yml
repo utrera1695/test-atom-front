@@ -20,7 +20,8 @@ jobs:
 
       - name: Crear environment.ts
         run: |
-          echo "${{ secrets.ANGULAR_ENVIRONMENT }}" > src/environments/environment.ts"
+          mkdir -p src/environments
+          printf "%s" "${{ secrets.ANGULAR_ENVIRONMENT }}" > src/environments/environment.ts
 
       # Instalación de dependencias y compilación
       - name: Install and Build
