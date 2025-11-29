@@ -1,0 +1,21 @@
+.form-container {
+  .title {
+    margin: 0px;
+    margin-bottom: 2rem;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: end;
+    .form-field {
+      width: 100%;
+      input {
+        width: 100%;
+      }
+      textarea {
+        width: 100%;
+      }
+    }
+  }
+}

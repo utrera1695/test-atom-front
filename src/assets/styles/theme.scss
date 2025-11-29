@@ -1,19 +1,11 @@
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
-// Plus imports for other components in your app.
+@import "primeng/resources/themes/aura-light-amber/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
 
-
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
-@include mat.core();
-
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$dark-primary-text: rgba(black, 0.87);
+$dark-primary-text: #373737;
 $light-primary-text: white;
+$background-color: #f7f7f7;
+$font-size: 12px;
 
 $orange-atom-palette: (
   50: #fff7e0,
@@ -40,12 +32,12 @@ $orange-atom-palette: (
     600: $dark-primary-text,
     700: $dark-primary-text,
     800: $light-primary-text,
-    900: $light-primary-text,
+    900: #8c6700,
     A100: $dark-primary-text,
     A200: $dark-primary-text,
     A400: $dark-primary-text,
     A700: black,
-  )
+  ),
 );
 
 $blue-accent-palette: (
@@ -78,34 +70,46 @@ $blue-accent-palette: (
     A200: $light-primary-text,
     A400: $light-primary-text,
     A700: $light-primary-text,
-  )
-);
-
-$atom-challenge-fe-template-primary: mat.define-palette($orange-atom-palette, 900);
-$atom-challenge-fe-template-accent: mat.define-palette($blue-accent-palette, A200, A100, A400);
-
-// The "warn" palette is optional and defaults to red if not specified.
-$my-warn: mat.define-palette(mat.$red-palette);
-
-$atom-typography: mat.define-typography-config(
-  $font-family: Inter,
-);
-
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
-$atom-challenge-fe-template-theme: mat.define-light-theme((
-  color: (
-    primary: $atom-challenge-fe-template-primary,
-    accent: $atom-challenge-fe-template-accent,
-    warn: $my-warn,
   ),
-  typography: $atom-typography,
-));
+);
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-@include mat.all-component-themes($atom-challenge-fe-template-theme);
+.p-inputtext {
+  border: 1px solid transparent;
+}
 
+h1 {
+  font-size: 2.98rem;
+}
 
-/* You can add global styles to this file, and also import other style files */
+h2 {
+  font-size: 2.48rem;
+}
+
+h3 {
+  font-size: 2.07rem;
+}
+
+h4 {
+  font-size: 1.72rem;
+}
+
+h5 {
+  font-size: 1.44rem;
+}
+
+h6 {
+  font-size: 1.2rem;
+}
+
+small {
+  font-size: 0.83rem;
+}
+
+input,
+textarea {
+  font-size: 12px;
+}
+
+html {
+  scrollbar-gutter: stable;
+}

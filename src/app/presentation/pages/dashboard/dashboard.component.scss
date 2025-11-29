@@ -1,0 +1,42 @@
+.dashboard {
+  margin: auto;
+  padding: 3rem 0px;
+  min-height: 100vh;
+  width: 90%;
+  transition: ease all 0.3s;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  &__element {
+    width: 100%;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__title {
+      margin-top: 0.5rem;
+    }
+  }
+  img {
+    width: 8rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .dashboard {
+    width: 80%;
+    flex-direction: row;
+    &__container {
+      flex-direction: row;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .dashboard {
+    width: 60%;
+  }
+}

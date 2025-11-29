@@ -1,0 +1,42 @@
+<div class="card">
+  <div class="form-container">
+    <h4 class="title">Agregar nueva tarea</h4>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <p-floatLabel class="form-field">
+        <input
+          pInputText
+          variant="filled"
+          name="title"
+          formControlName="title"
+          id="title"
+          aria-label="Título de la tarea"
+          maxlength="150"
+        />
+        <label for="title">Título</label>
+      </p-floatLabel>
+      <p-floatLabel class="form-field">
+        <textarea
+          variant="filled"
+          name="description"
+          id="description"
+          formControlName="description"
+          rows="5"
+          cols="30"
+          pInputTextarea
+          aria-label="Descripción de la tarea"
+        ></textarea
+        ><label for="description">Descripción de la tarea</label>
+      </p-floatLabel>
+      <p-button
+        size="small"
+        icon="pi pi-plus"
+        label="Agregar"
+        [rounded]="true"
+        aria-label="Agregar tarea"
+        type="submit"
+        [disabled]="form.invalid"
+      />
+    </form>
+  </div>
+</div>
+<p-toast />

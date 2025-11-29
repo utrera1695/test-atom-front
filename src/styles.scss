@@ -1,4 +1,14 @@
 @import "assets/styles/theme";
+@import "assets/styles/components/card";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Inter, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+  background-color: $background-color;
+  color: $dark-primary-text;
+}
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: $font-size;
+}

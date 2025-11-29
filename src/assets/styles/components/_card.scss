@@ -1,0 +1,10 @@
+@use "../theme.scss";
+
+.card {
+  background-color: $light-primary-text;
+  width: 100%;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0px 0px 10px #dedede;
+  transition: all ease 0.3s;
+}

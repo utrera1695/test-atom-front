@@ -1,0 +1,71 @@
+@import "../../../../../assets/styles/theme.scss";
+
+.task {
+  &__date {
+    span {
+      background-color: rgb(235, 235, 235);
+      color: gray;
+      font-size: 10px;
+      padding: 5px 8px;
+      border-radius: 16px;
+      transition: all ease 0.3s;
+    }
+  }
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p-checkbox {
+      label {
+        cursor: pointer;
+      }
+    }
+  }
+  &__description {
+    font-size: 12px;
+    margin-bottom: 2rem;
+  }
+  &__title {
+    margin-bottom: 10px;
+  }
+}
+
+.card {
+  &.completed {
+    background-color: map-get($orange-atom-palette, 50);
+    opacity: 0.6;
+    .task {
+      &__description,
+      &__title {
+        color: map-get(map-get($orange-atom-palette, contrast), 900);
+      }
+      &__title {
+        text-decoration: line-through;
+      }
+      &__date {
+        span {
+          background-color: map-get($orange-atom-palette, 300);
+          color: rgb(68 68 68);
+        }
+      }
+    }
+  }
+}
+
+.form-container {
+  margin: 0.5rem 0px;
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    .form-field {
+      width: 100%;
+      input {
+        width: 100%;
+      }
+      textarea {
+        width: 100%;
+      }
+    }
+  }
+}

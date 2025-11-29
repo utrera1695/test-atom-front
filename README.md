@@ -1,36 +1,61 @@
-# ATOM FE CHALLENGE TEMPLATE - ANGULAR
+# Test TODO AtomChat - Frontend
 
-Este proyecto es una plantilla con lo necesario para comenzar a desarrollar el front-end de la aplicación de la prueba técnica de Atom. Se base en Angular con la versión 17.3.6.
-Se ha realizado la instalación y configuración de varias dependencias necesarias para el desarrollo de la aplicación, como por ejemplo: Angular Material.
+Este es el FrontEnd para la prueba técnica de AtomChat. Tablero de gestión de tareas estilo ToDo List. Desarrollado Con Angular 17
 
-## Instrucciones
-Siéntete libre de clonar este repositorio y utilizarlo como base para el desarrollo de la aplicación. Sigue las indicates de la prueba técnica para completar la aplicación y desarrolla como más te sientas cómodo.
+[live preview](https://test-atom-latest.onrender.com/docs)
 
-De igual manera puedes documentar dentro de este archivo todo lo que deseas contar sobre tu desarrollo, como por ejemplo, decisiones de diseño, problemas encontrados, etc.
+## Características
 
-## Comentarios sobre el desarrollo
-...
+- **Autenticación de Usuarios:** Registro e inicio de sesión.
+- **Sesiones con JWT:** Manejo de JSON Web Tokens (JWT) para manejar sesiones de usuario de forma segura.
+- **Middleware de Autenticación:** Un middleware para proteger las rutas que requieren que el usuario esté autenticado.
+- **Escrito en TypeScript:** Código tipado para mayor robustez y mantenibilidad.
+- **Estilos:** PrimeNg para un mejor estilo visual
 
-## Development server
+## Empezando
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas.
 
-## Code scaffolding
+### Prerrequisitos
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Asegúrate de tener instalado lo siguiente:
 
-## Build
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Instalación
 
-## Running unit tests
+1.  Clona el repositorio en tu máquina local:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    ```sh
+    git clone
+    ```
 
-## Running end-to-end tests
+2.  Ingresa al directorio e instala las dependencias del proyecto:
+    ```sh
+    npm install
+    ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Configuración
 
-## Further help
+1.  **Variables de Entorno:**
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    - Crea un archivo `enviroments.ts` en el directorio `src/enviroments` y copia el contenido enviroment.example.ts
+
+    Tu archivo `enviroments.ts` debería verse así:
+
+    ```js
+    export const enviroments = {
+      apiUrl: "http://localhost:3000/api",
+    };
+    ```
+
+## Ejecución
+
+### Modo de Desarrollo
+
+Para iniciar el servidor en modo de desarrollo:
+
+```sh
+npm run watch
+```

@@ -1,0 +1,97 @@
+<div class="card" [ngClass]="{ completed: task.completed }">
+  <div class="task">
+    <div class="task__date">
+      <span>{{ task.createdAt | moment : "DD/MM/YYYY hh:mm a" }}</span>
+    </div>
+    <div *ngIf="!isEditTask; else editTask">
+      <h5 class="task__title">
+        {{ task.title }}
+      </h5>
+
+      <p class="task__description">
+        {{ task.description }}
+      </p>
+    </div>
+
+    <ng-template #editTask>
+      <div class="form-container">
+        <form [formGroup]="form" (ngSubmit)="onEditTask()">
+          <input
+            pInputText
+            variant="filled"
+            name="title"
+            formControlName="title"
+            id="title"
+            aria-label="Título de la tarea"
+            [(ngModel)]="task.title"
+            maxlength="150"
+          />
+          <textarea
+            variant="filled"
+            name="description"
+            id="description"
+            formControlName="description"
+            rows="5"
+            cols="30"
+            pInputTextarea
+            aria-label="Descripción de la tarea"
+            [(ngModel)]="task.description"
+          ></textarea>
+        </form>
+      </div>
+    </ng-template>
+    <div class="task__actions">
+      <div class="task__actions__status">
+        <p-checkbox
+          [(ngModel)]="task.completed"
+          label="Tarea completada"
+          name="completed"
+          [binary]="true"
+          (onChange)="onChangeStatusTask()"
+        />
+      </div>
+      <div class="task__actions__options">
+        <p-button
+          *ngIf="!isEditTask; else saveUpdate"
+          size="small"
+          icon="pi pi-pencil"
+          [rounded]="true"
+          [text]="true"
+          severity="secondary"
+          aria-label="Editar tarea"
+          [disabled]="task.completed"
+          pTooltip="Editar tarea"
+          tooltipPosition="top"
+          (click)="setEditTask()"
+        />
+
+        <p-button
+          *ngIf="!isEditTask"
+          size="small"
+          icon="pi pi-trash"
+          [rounded]="true"
+          [text]="true"
+          severity="danger"
+          aria-label="Eliminar tarea"
+          pTooltip="Eliminar tarea"
+          tooltipPosition="top"
+          (click)="confirmDelete()"
+        />
+        <ng-template #saveUpdate>
+          <p-button
+            size="small"
+            icon="pi pi-check"
+            label="Guardar"
+            [rounded]="true"
+            aria-label="Agregar tarea"
+            [disabled]="form.invalid"
+            (click)="onEditTask()"
+          />
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p-toast />
+<p-confirmDialog />

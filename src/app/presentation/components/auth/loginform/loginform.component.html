@@ -1,0 +1,39 @@
+<div class="card">
+  <img src="assets/images/logo-atom-chat.png" alt="logo de atom" />
+  <p class="text-center">
+    Ingresa tu correo electrónico para acceder al panel de tareas
+  </p>
+  <div class="form-container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <p-floatLabel class="form-field">
+        <input
+          pInputText
+          variant="filled"
+          formControlName="email"
+          name="email"
+          id="email"
+          aria-label="Campo para el correo electrónico"
+          aria-describedby="username-help"
+        />
+        <label for="email">Correo electrónico</label>
+
+        <p
+          id="username-help"
+          *ngIf="form.get('email')?.errors?.['email']"
+          class="error-text"
+        >
+          El formato del correo no es válido
+        </p>
+      </p-floatLabel>
+      <p-button
+        label="Ingresar"
+        [rounded]="true"
+        aria-label="Login al panel"
+        [disabled]="form.invalid"
+        type="submit"
+      />
+    </form>
+  </div>
+</div>
+<p-toast />
+<p-confirmDialog />
