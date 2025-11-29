@@ -18,6 +18,10 @@ jobs:
         with:
           node-version: 20
 
+      - name: Crear environment.ts
+        run: |
+          echo "${{ secrets.ANGULAR_ENVIRONMENT }}" > src/environments/environment.ts"
+
       # Instalación de dependencias y compilación
       - name: Install and Build
         run: npm ci && npm run build
